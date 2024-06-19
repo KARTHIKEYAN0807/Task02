@@ -1,0 +1,79 @@
+Objects and Their Internal Representation in JavaScript
+
+JavaScript, the language of the web, owes much of its power and flexibility to objects. Objects serve as the fundamental building blocks for modern JavaScript, enabling developers to create complex data structures, organize code, and model real-world entities. In this blog, we’ll dive into the fascinating world of JavaScript objects, exploring their internal representation, properties, and methods.
+
+What is an Object in JavaScript?
+
+An object in JavaScript is a composite data type that allows you to group related data and functionality together. Unlike primitive data types (such as numbers, strings, and booleans), which store a single value each, objects can hold a combination of primitive data types and reference data types. Let’s break down the key aspects of JavaScript objects:
+
+Reference Data Type:
+
+*An object is a reference data type. When you assign an object to a variable, that variable holds a reference or pointer to the actual object stored in memory.
+
+*The value itself isn’t stored directly in the variable; instead, it points to the memory location where the object resides.
+
+Key-Value Pairs:
+
+
+*Objects are collections of related data represented as “key: value” pairs.
+
+*Keys (also called properties) can be variables or functions, while values can be primitive data types or other objects.
+
+*For example, if you’re modeling a student, the object might have properties like name, age, address, and methods like updateAddress.
+
+Accessing Properties:
+
+
+*You can access an object’s properties using dot notation (objectName.propertyName) or bracket notation (objectName['propertyName']).
+
+*Both the object name and property name are case-sensitive.
+
+Creating Objects:
+
+*You can create an object using object literals or constructors.
+
+*Example using object literal
+
+const myCar = {
+  make: 'Ford',
+  model: 'Mustang',
+  year: 1969,
+};
+
+Internal Representation of Objects
+
+Hash Table Representation:
+
+*JavaScript engines internally represent objects using hash tables (also known as dictionaries or maps).
+
+*Each object has a hidden map that describes its structure.
+
+*The map guides property access and optimization.
+
+Storage of Properties:
+
+*Most objects store their properties in a single block of memory.
+
+*Unassigned properties are undefined.
+
+*Named properties that don’t fit in an object are stored in an overflow array.
+
+Numbered Properties:
+
+*Numbered properties (array-like indices) are stored separately, usually in a contiguous array.
+
+*These properties are optimized for performance.
+
+Example: Visualizing Objects
+Let’s visualize an object representing a car:
+
+const myCar = {
+  make: 'Ford',
+  model: 'Mustang',
+  year: 1969,
+};
+
+// Internal representation:
+// { make: 'Ford', model: 'Mustang', year: 1969 }
+// Map: { make: 0, model: 1, year: 2 }
+// Overflow array: [undefined, undefined, undefined]
